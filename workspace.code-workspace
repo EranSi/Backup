@@ -1,0 +1,20 @@
+{
+    "folders": [
+		{
+			"path": "..\\..\\VS_PlatformIO\\SIMONI_JIG\\SIMONI_JIG"
+		},
+		{
+			"name": "Backup",
+			"path": "."
+		},
+		{
+			"name": "CodeBackup",
+			"path": "CodeBackup"
+		}
+	],
+    "settings": {
+        "files.associations": {
+            "cmath": "cpp"
+        }
+    }
+}
