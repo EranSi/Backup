@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMONI - Innovation Systems</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet"> -->
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background: linear-gradient(169.29deg, #262B2F -0.68%, #16191D 74.03%);
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Montserrat, sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .wrapper {
+            margin: 0px auto;
+            width: 375px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-logo {
+            width: 246px;
+        }
+
+        .btn-all-common {
+            height: 69px;
+            width: 311px;
+            margin-top: 15px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .btn-all-common img {
+            padding: 7px;
+        }
+
+        .btn-green-gradient {
+            background-image: linear-gradient(to top, #5BDA8D 20%, #D7FE7E 100%);
+            box-shadow: 0 0 5px #eee;
+            color: #297E4A !important;
+        }
+
+        .btn-green-gradient:active {
+            background-image: linear-gradient(to bottom, #7BDA8D 100%, #D7FE7E 100%);
+        }
+
+        .btn-gray-gradient {
+            background-image: linear-gradient(to top, #525860 0%, #B9C4D1 100%);
+            box-shadow: 0 0 5px #eee;
+            color: #FFFFFF;
+        }
+
+        .btn-gray-gradient:active {
+            background-image: linear-gradient(to top, #555555 0%, #DDDDDD 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main-logo">
+            <img width="246px" height="213px" src="img/imgMainLogo.svg">
+        </div>
+        <div>
+            <a href="calib.htm" class="btn-all-common btn-green-gradient">
+                <img width="38px" height="38px" src="img/imgSetting.svg">Calibration
+            </a>
+        </div>
+        <div>
+            <a href="select.htm" class="btn-all-common btn-gray-gradient">
+                Select Cut Plan
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

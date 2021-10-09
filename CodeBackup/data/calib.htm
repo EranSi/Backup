@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMONI - Innovation Systems</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">       -->
+</head>
+
+<body onload="updateData()">
+    <div class="wrapper calib-wrapper">
+        <div class="top">
+            <a href="select.htm" class="btn-next btn-dark-gray-style">
+                <img src="img/imgArrowLeft2.svg" width="19.25px" height="19.25" alt="">
+            </a>
+            <div class="small-logo">
+                <img src="img/imgSmallLogo.svg" alt="">
+            </div>
+            <a href="/" class="btn-home btn-dark-gray-style">
+                <img src="img/imgHome.svg" width="15.4px" height="15.4" alt="">
+            </a>
+        </div>
+        <div class="calib-title-1 text">
+            Calibration
+        </div>
+        <div class="calib-title-2 text">
+            INSTALLED SAW
+        </div>
+        <div id="saw-img-id" class="saw-img container-border">
+            <img src="img/imgRegularSaw1.svg">
+        </div>
+        <div class="saw-select">
+            <div class="saw-select-current btn-dark-gray-style">
+                <a onclick="sawSelect()" class="setting">
+                    <span id="saw-select-current-id">Regular Saw 1</span>
+                    <img src="img/imgArrowDownCircle.svg" alt="">
+                </a>
+            </div>
+            <div class="saw-select-content" id="saw-select-content-id">
+                <div onclick="regularSawSelect()">
+                    <a class="setting-black">Regular Saw 1
+                        <img src="img/imgArrowDownCircle2.svg" alt="">
+                    </a>
+                </div>
+                <div onclick="dovetailBitSelect()">
+                    <a class="setting-black">Dovetail Bit 2</a>
+                </div>
+            </div>
+        </div>
+        <div class="saw-thickness-container container-border">
+            <div class="saw-thickness display-inline-flex" id="saw-thickness-id">
+                Saw thickness
+                <input type="text" value="" class="saw-thickness-value" oninput="onChangeSettings()">
+            </div>
+            <div class="saw-thickness" id="d-thickness-id">
+                α (d=degee)
+                <input type="text" value="" class="saw-thickness-value" oninput="onChangeSettings()">
+            </div>
+            <div class="saw-thickness" id="h-thickness-id">
+                h (Cut Height)
+                <input type="text" value="" class="saw-thickness-value" oninput="onChangeSettings()">
+            </div>
+            <div class="saw-thickness" id="D-thickness-id">
+                D (Bit Width) 
+                <input type="text" value="" class="saw-thickness-value" oninput="onChangeSettings()">
+            </div>
+            <div class="units-select">
+                <div onclick="unitsSelect()" class="units-select-current btn-dark-gray-style">
+                    <a>
+                        <span id="units-select-current-id">MM</span>
+                        <img src="img/imgArrowDownCircle.svg" alt="">
+                    </a>
+                </div>
+                <div class="units-select-content" id="units-select-content-id">
+                    <div onclick="mmUnitsSelect()">
+                        <a>MM
+                            <img src="img/imgArrowDownCircle2.svg" alt="">
+                        </a>
+                    </div>
+                    <div onclick="inchUnitsSelect()">
+                        <a>Inch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="saw-pressure-container container-border">
+            <span class="text-1" id="pressure-val-id">0</span>
+            <span class="text-2">ENTER SAW PRESSURE</span>
+            <div class="saw-pressure-slidecontainer">
+                <input type="range" min="-10" max="10" value="0" class="slider" id="saw-pressure-range"
+                    onchange="changeSawPressure(this.value);">
+            </div>
+        </div>
+        <div>
+            <a onClick="saveData()" class="btn-save btn-gray-gradient">
+                <img src="img/imgTickSquare.svg" alt="" width="14px" height="14px" id="img-tick-square-id">Save
+            </a>
+        </div>
+
+        <div class="motor-speed-container">
+            <div class="text-3">
+                CALIBRATION MOTOR STEPS SPEED
+            </div>
+            <div class="motor-speed-btn-container ">
+                <div onclick="x1()">
+                    <a class="btn-x1 btn-dark-gray-style motor-speed-btn-color-selected" id="x1-id">x1</a>
+                </div>
+                <div onclick="x10()">
+                    <a class="btn-x10 btn-dark-gray-style" id="x10-id">x10</a>
+                </div>
+                <div onclick="x100()">
+                    <a class="btn-x100 btn-dark-gray-style" id="x100-id">x100</a>
+                </div>
+            </div>
+        </div>
+        <div class="btn-adj-container">
+            <div>
+                <a onclick="left()" class="btn-all-common btn-half-width btn-green-gradient">
+                    <img src="img/imgArrowLeft.svg" alt="">Adj Left
+                </a>
+            </div>
+            <div>
+                <a onclick="right()" class="btn-all-common btn-half-width btn-red-gradient">
+                    Adj Right<img src="img/imgArrowRight.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="btn-position-container">
+            <a onclick="setHomePos()" class="btn-all-common btn-full-width btn-gray-gradient">
+                Set 0 Position
+            </a>
+        </div>
+
+
+    </div>
+    <script src="calib.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMONI - Innovation Systems</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+</head>
+
+<body onload="updateData()">
+    <div class="wrapper select-wrapper">
+        <div class="top">
+            <a href="select.htm" class="btn-next">
+                <img src="img/imgArrowLeft2.svg" width="19.25px" height="19.25" alt="">
+            </a>
+            <div class="small-logo">
+                <img src="img/imgSmallLogo.svg" alt="">
+            </div>
+            <a href="/" class="btn-home">
+                <img src="img/imgHome.svg" width="15.4px" height="15.4" alt="">
+            </a>
+        </div>
+        <div class="calib-title-1 text">
+            Start to cut
+        </div>
+        <div id="img-board-active-container-id">
+            <img src="img/plan3symmetricalA.png" height="280px">
+        </div>
+        <div class="board-select-container">
+            <!-- <div class="calib-title-1 font-size-12 text"> -->
+            <div class="text-3">
+                SELECT THE BOARD TYPE A OR B
+            </div>
+            <div class="notes">
+                <div class="note">
+                    <img src="img/imgAicon.svg" alt="" class="a-icon">Board A represent the first Finger Join Board
+                </div>
+                <div class="note">
+                    <img src="img/imgBicon.svg" alt="" class="b-icon">Board B represent the offset Finger Join Board
+                </div>
+            </div>
+            <div class="board-select-btn-container">
+                <div>
+                    <a class="board-btn btn-dark-gray-style board-btn-color-selected" id="board-a-id"
+                        onclick="boardtype_a()">BOARD A</a>
+                </div>
+                <div>
+                    <a class="board-btn btn-dark-gray-style" id="board-b-id" onclick="boardtype_b()">BOARD B</a>
+                </div>
+            </div>
+            <div class="step-counter">
+                Step counter
+                <input type="text" value="0" class="step-counter-value" id="counter-id">
+            </div>
+
+            <div>
+                <div class="overlay-box" id="saw_busy_box">
+                    Busy
+                    <!-- <H1><B>Busy</B></H1> -->
+                </div>
+                <div>
+                    <a class="btn-forward btn-green-gradient" onclick="forwardCutting()">
+                        <img src="img/imgStart.svg" style="margin: 6px;">Forward
+                    </a>
+                </div>
+                <div class="reverse-home-buttons">
+                    <div>
+                        <a class="btn-reverse btn-red-style" onclick="reverseCutting()">
+                            <img src="img/imgReverseicon.svg" style="margin: 6px;">Reverse
+                        </a>
+                    </div>
+                    <div>
+                        <a class="btn-home-cut btn-orange-style" onclick="homePosition()">
+                            <img src="img/imgHomeicon.svg" style="margin: 6px;">Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div>
+
+    </div>
+    <script src="cut.js"></script>
+</body>
+
+</html>

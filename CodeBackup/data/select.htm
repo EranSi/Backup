@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMONI - Innovation Systems</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="updateData()">
+    <div class="wrapper select-wrapper">
+        <div class="top">
+            <a href="cut.htm" class="btn-next">
+                <img src="img/imgArrowLeft2.svg" width="19.25px" height="19.25px">
+            </a>
+            <div class="small-logo">
+                <img src="img/imgSmallLogo.svg" width="84px" height="18px">
+            </div>
+            <a href="/" class="btn-home">
+                <img src="img/imgHome.svg" width="15.4px" height="15.4px">
+            </a>
+        </div>
+        <div class="calib-title-1 text">
+            Select Cut Plan
+        </div>
+
+        <!-- plan 1 -->
+        <div class="plan-container" onclick="onPlanSelect(1)">
+            <div class="plan-part-a">
+                <div class="plan-title">Out of Box</div>
+                <div>
+                    <img src="img/plan1oob.png" width="200px">
+                </div>
+                <button class="plan-info-btn" id="plan-1-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-1-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Saw Thickness <span id="plan-1-saw-thickness-id"></span>
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(1)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- plan 2 -->
+        <div class="plan-container" onclick="onPlanSelect(2)">
+            <div class="plan-part-a">
+                <div class="plan-title">Asymmetrical</div>
+                <div>
+                    <img src="img/plan2asymmetrical.png" width="200px">
+                </div>
+                <button class="plan-info-btn" id="plan-2-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-2-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Cut Length [X] mm
+                    <input type="text" value="" class="plan-parameter-value" id="plan-2-cutlength-value-id">
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(2)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- plan 3 -->
+        <div class="plan-container" onclick="onPlanSelect(3)">
+            <div class="plan-part-a">
+                <div class="plan-title">Symmetrical</div>
+                <div>
+                    <img src="img/plan3symmetrical.png" width="200px">
+                </div>
+                <button class="plan-info-btn" id="plan-3-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-3-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Cut Length [X] mm
+                    <input type="text" value="" class="plan-parameter-value" id="plan-3-cutlength-value-id">
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Board Length [Y] mm
+                    <input type="text" value="" class="plan-parameter-value" id="plan-3-boardlength-value-id">
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(3)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- plan 4 -->
+        <div class="plan-container" onclick="onPlanSelect(4)">
+            <div class="plan-part-a">
+                <div class="plan-title">Incremental</div>
+                <div>
+                    <img src="img/plan4incremental.png" width="200px">
+                </div>
+                <button class="plan-info-btn" id="plan-4-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-4-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Saw Thickness <span id="plan-4-saw-thickness-id"></span>
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Increment Cut [X]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-4-incrementalcut-value-id">
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(4)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- plan 5 -->
+        <div class="plan-container" onclick="onPlanSelect(5)">
+            <div class="plan-part-a">
+                <div class="plan-title">Custom Shape</div>
+                <div>
+                    <img src="img/plan5custom.png" width="200px">
+                </div>
+                <button class="plan-info-btn" id="plan-5-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-5-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Saw Thickness <span id="plan-5-saw-thickness-id"></span>
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Board Length [X]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-5-boardlength-value-id">
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Central Cut Length [Y]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-5-centralcutlength-value-id">
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Tooth Length [Z]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-5-toothlength-value-id">
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(5)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- plan 6 -->
+        <div class="plan-container" onclick="onPlanSelect(6)">
+            <div class="plan-part-a">
+                <div class="plan-title">Bridle Joint</div>
+                <div>
+                    <img src="img/plan6bridlejoint.png" width="280px">
+                </div>
+                <button class="plan-info-btn" id="plan-6-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-6-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Central Cut Length [X]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-6-centralcutlength-value-id">
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Board Length [Y]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-6-boardlength-value-id">
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(6)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- plan 7 -->
+        <div class="plan-container" onclick="onPlanSelect(7)">
+            <div class="plan-part-a">
+                <div class="plan-title">Dado Dovetail</div>
+                <div>
+                    <img src="img/plan7dadodovetail.png" width="200px">
+                </div>
+                <button class="plan-info-btn" id="plan-7-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-7-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Tooth Length [X]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-7-centralcutlength-value-id">
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Board Length [Y]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-7-boardlength-value-id">
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(7)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- plan 8 -->
+        <div class="plan-container" onclick="onPlanSelect(8)">
+            <div class="plan-part-a">
+                <div class="plan-title">Dovetail Puzzle</div>
+                <div>
+                    <img src="img/plan8dovetailpuzzle.png" width="200px">
+                </div>
+                <button class="plan-info-btn" id="plan-8-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-8-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Tooth Size [X]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-8-centralcutlength-value-id">
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Board Length [Y]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-8-boardlength-value-id">
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(8)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- plan 9 -->
+        <div class="plan-container" onclick="onPlanSelect(9)">
+            <div class="plan-part-a">
+                <div class="plan-title">Japanese Bridle</div>
+                <div>
+                    <img src="img/plan9japanesebridle.png" width="250px">
+                </div>
+                <button class="plan-info-btn" id="plan-9-info-btn">HELP</button>
+            </div>
+            <div class="plan-part-b container-border" id="plan-9-param-id">
+                <div class="plan-parameter display-inline-flex">
+                    Tooth Size [X]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-9-centralcutlength-value-id">
+                </div>
+                <div class="plan-parameter display-inline-flex">
+                    Board Length [Y]
+                    <input type="text" value="" class="plan-parameter-value" id="plan-9-boardlength-value-id">
+                </div>
+                <div>
+                    <a class="btn-start btn-green-gradient" onclick="onStartCut(9)">
+                        <img src="img/imgStart.svg" width="12px" height="14px" style="margin: 6px;">Start
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="select.js"></script>
+</body>
+
+</html>
